@@ -1,6 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 import s from './second_Counter.module.css';
 import {UniversalButton} from "../universalButton/universalButton";
+import {TextField} from "@mui/material";
 
 const display = {
     display: 'none'
@@ -29,13 +30,18 @@ export const SecondCounter = (props: SecondCounterPropsType) => {
         <div style={none ? display : undefined} className={s.wrapper}>
             <div className={s.inputs_wrapper}>
                 <div className={s.max_input}>Max value:
-                    <input
-                        type={'number'}
+                    <TextField
+                        style={{width: '150px', marginLeft: '20px'}}
                         onChange={onChangeHandlerInput}
+                        type="number"
+                        variant="standard"
                     />
                 </div>
                 <div className={s.start_input}>Start value:
-                    <input type={'number'}
+                    <TextField
+                               type="number"
+                               variant="standard"
+                               style={{width: '150px', marginLeft: '20px'}}
                     />
                 </div>
             </div>
