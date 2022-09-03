@@ -29,6 +29,7 @@ export const Counters = (props: ValuePropsType) => {
         props.setValue(0)
     }
     const setButtonHandler = () => {
+        console.log(props.toggle)
         props.setToggle(!props.toggle)
     }
 
@@ -51,7 +52,7 @@ export const Counters = (props: ValuePropsType) => {
                     </div>
                 </div>
             </div>
-            <div style={!props.toggle ? block : undefined}>
+            <div style={props.toggle ? block : none}>
                 <SecondCounter toggle={props.toggle}
                                setToggle={props.setToggle}
                 />
