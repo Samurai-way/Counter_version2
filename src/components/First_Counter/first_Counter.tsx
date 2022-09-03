@@ -5,9 +5,19 @@ import {UniversalButton} from "../universalButton/universalButton";
 
 type ValuePropsType = {
     value: number
+    setValue: (value: number) => void
 }
 
-export const FirstCounter = (props:ValuePropsType) => {
+export const FirstCounter = (props: ValuePropsType) => {
+
+    const incButtonHandler = () => {
+        props.setValue(props.value + 1)
+    }
+
+    const decButtonHandler = () => {
+        props.setValue(0)
+    }
+
     return (
         <div className={f.counter_wrapper}>
             <div className={f.value}>
@@ -15,14 +25,15 @@ export const FirstCounter = (props:ValuePropsType) => {
             </div>
             <div className={f.button_wrapper}>
                 <div className={f.inc}>
-                    <UniversalButton name={'inc'} callBack={()=>{}}/>
+                    <UniversalButton name={'inc'} callBack={incButtonHandler}/>
                 </div>
                 <div className={f.dec}>
-                    <UniversalButton name={'dec'} callBack={()=>{}}/>
+                    <UniversalButton name={'dec'} callBack={decButtonHandler}/>
                 </div>
-               <div className={f.save}>
-                   <UniversalButton name={'save'} callBack={()=>{}}/>
-               </div>
+                <div className={f.set}>
+                    <UniversalButton name={'set'} callBack={() => {
+                    }}/>
+                </div>
             </div>
         </div>
     );

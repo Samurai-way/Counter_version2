@@ -8,7 +8,7 @@ type UniversalButtonProps = {
 export const UniversalButton = (props: UniversalButtonProps) => {
 
     const onCLickHandler = () => {
-        console.log('ky')
+        props.callBack()
     }
 
     return (
