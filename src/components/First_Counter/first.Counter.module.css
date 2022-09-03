@@ -1,0 +1,37 @@
+.counter_wrapper{
+    width: 350px;
+    height: 250px;
+    border: 2px solid black;
+    margin: 150px 450px;
+    display: inline-block;
+    border: 2px solid cyan;
+    border-radius: 20px;
+    background-color: brown;
+}
+.value{
+    width: 320px;
+    height: 130px;
+    margin: 10px 15px;
+    border: 2px solid hotpink;
+    border-radius: 20px;
+    background-color: cyan;
+}
+.button_wrapper{
+    width: 320px;
+    height: 80px;
+    margin: 10px 15px;
+    border: 2px solid hotpink;
+    border-radius: 20px;
+    background-color: cyan;
+    display: flex;
+    justify-content: center;
+}
+.inc{
+    margin: 35px 60px 0px 50px;
+}
+.dec{
+    margin: 35px 70px 10px 20px;
+}
+.save{
+    margin: 35px 70px 10px 20px;
+}
