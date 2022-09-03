@@ -1,0 +1,10 @@
+.wrapper{
+    width: 350px;
+    height: 250px;
+    border: 2px solid black;
+    margin: 150px 450px;
+    display: inline-block;
+    border: 2px solid cyan;
+    border-radius: 20px;
+    background-color: black;
+}
