@@ -1,7 +1,7 @@
 import React from 'react';
 import f from "./first.Counter.module.css";
-import {UniversalValue} from "../iniversalValue/universalValue";
-import {UniversalButton} from "../universalButton/universalButton";
+import {UniversalValue} from "./iniversalValue/universalValue";
+import {UniversalButton} from "./universalButton/universalButton";
 
 type ValuePropsType = {
     value: number
@@ -10,10 +10,10 @@ type ValuePropsType = {
 
 export const FirstCounter = (props: ValuePropsType) => {
 
+
     const incButtonHandler = () => {
         props.setValue(props.value + 1)
     }
-
     const decButtonHandler = () => {
         props.setValue(0)
     }

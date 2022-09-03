@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from "@mui/material";
 
 type UniversalButtonProps = {
     name: string
@@ -13,7 +14,9 @@ export const UniversalButton = (props: UniversalButtonProps) => {
 
     return (
         <div>
-            <button onClick={onCLickHandler}>{props.name}</button>
+            <Button color={'error'}
+                    variant={'contained'}
+                    onClick={onCLickHandler}>{props.name}</Button>
         </div>
     );
 };
