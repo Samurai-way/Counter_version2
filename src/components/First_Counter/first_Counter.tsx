@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import f from "./first.Counter.module.css";
-import {UniversalValue} from "./iniversalValue/universalValue";
-import {UniversalButton} from "./universalButton/universalButton";
+import {UniversalValue} from "../iniversalValue/universalValue";
+import {UniversalButton} from "../universalButton/universalButton";
 import {SecondCounter} from "../Second_Counter/second_Counter";
 
 type ValuePropsType = {
     value: number
     setValue: (value: number) => void
+    toggle: boolean
+    setToggle: (toggle: boolean) => void
 }
 
 const none = {
@@ -16,9 +18,9 @@ const block = {
     display: 'block'
 }
 
-export const FirstCounter = (props: ValuePropsType) => {
+export const Counters = (props: ValuePropsType) => {
 
-    const [right, setRight] = useState(false)
+    // const [right, setRight] = useState(false)
 
     const incButtonHandler = () => {
         props.setValue(props.value + 1)
@@ -26,14 +28,14 @@ export const FirstCounter = (props: ValuePropsType) => {
     const decButtonHandler = () => {
         props.setValue(0)
     }
-
     const setButtonHandler = () => {
-        setRight(!right)
+        props.setToggle(!props.toggle)
     }
+
 
     return (
         <div>
-            <div style={right ? none : undefined} className={f.counter_wrapper}>
+            <div style={props.toggle ? none : undefined} className={f.counter_wrapper}>
                 <div className={f.value}>
                     <UniversalValue value={props.value}/>
                 </div>
@@ -49,8 +51,10 @@ export const FirstCounter = (props: ValuePropsType) => {
                     </div>
                 </div>
             </div>
-            <div style={!right ? none : undefined}>
-                <SecondCounter/>
+            <div style={!props.toggle ? block : undefined}>
+                <SecondCounter toggle={props.toggle}
+                               setToggle={props.setToggle}
+                />
             </div>
         </div>
 
